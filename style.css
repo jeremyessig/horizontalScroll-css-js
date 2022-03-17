@@ -1,0 +1,83 @@
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  /* overflow-x: hidden; */ /*Si plusieurs pages, injecter par JS*/
+}
+
+.blocHorizontal {
+  display: flex;
+  flex-direction: row;
+  width: 400vw; /*Changer en fonction du nbr de slide*/
+  height: 100vh;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+}
+
+.container {
+  width: 100vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  scroll-snap-align: start;
+}
+
+.one {
+  background-color: khaki;
+}
+
+.two {
+  background-color: aquamarine;
+}
+
+.three {
+  background-color: coral;
+}
+
+.four {
+  background-color: skyblue;
+}
+
+@media screen and (max-width: 880px) {
+  .blocHorizontal {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    transform: rotate(0deg) translateY(0vh);
+  }
+
+  .container {
+    width: auto;
+    height: auto;
+    transform: rotate(0deg) translateX(0vh);
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
