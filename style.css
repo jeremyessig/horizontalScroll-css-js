@@ -80,4 +80,8 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .slide {
+    overflow-y: scroll;
+  }
 }
